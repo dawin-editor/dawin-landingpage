@@ -1,5 +1,5 @@
-import NavBar from "./NavBar";
-import TextHero from "./TextHero";
+import NavBar from "../components/hero/NavBar";
+import TextHero from "../components/hero/TextHero";
 
 const Hero = () => {
   return (
