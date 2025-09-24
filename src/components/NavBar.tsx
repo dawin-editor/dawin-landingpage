@@ -1,10 +1,12 @@
 import { MoveLeft, Menu, X } from "lucide-react";
 import { useState } from "react";
 
-const NavBar = (isHome: boolean) => {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
-  isHome = false;
+interface NavBarProps {
+  isHome?: boolean;
+}
 
+const NavBar = ({ isHome = false }: NavBarProps) => {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
   };
@@ -16,7 +18,7 @@ const NavBar = (isHome: boolean) => {
       style={{ unicodeBidi: "bidi-override" }}
     >
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between py-5">
+        <div className="flex items-center justify-between ">
           {/* Logo */}
           <div className="flex-shrink-0">
             <img src="dawin.svg" alt="logo" className="h-10 sm:h-12" />
@@ -28,7 +30,7 @@ const NavBar = (isHome: boolean) => {
               <a href="#">الرئيسة</a>
             </li>
             <li className="whitespace-nowrap hover:text-black transition-colors">
-              <a href="#">حول المحرر</a>
+              <a href="#">حول المحرّر</a>
             </li>
             <li className="whitespace-nowrap hover:text-black transition-colors">
               <a href="#">المميزات</a>
@@ -55,7 +57,7 @@ const NavBar = (isHome: boolean) => {
           </div>
 
           {/* Mobile menu button */}
-          <div className="md:hidden">
+          <div className="sm:hidden ">
             <button
               onClick={toggleMenu}
               className="text-[#6B7280] hover:text-black transition-colors p-2"
@@ -67,8 +69,8 @@ const NavBar = (isHome: boolean) => {
 
         {/* Mobile Menu */}
         {isMenuOpen && (
-          <div className="absolute inset-x-0 top-0 p-2 transition origin-top-right transform md:hidden">
-            <div className="overflow-hidden bg-white rounded-lg shadow-md ">
+          <div className="absolute inset-x-0 p-2 top-0 transition origin-top-right transform md:hidden">
+            <div className="overflow-hidden rounded-lg shadow-lg bg-amber-600 ">
               <div className="flex items-center justify-between px-5 pt-4">
                 <div>
                   <img
