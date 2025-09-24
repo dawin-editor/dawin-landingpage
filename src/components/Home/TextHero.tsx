@@ -3,7 +3,7 @@ import { MoveLeft } from "lucide-react";
 const TextHero = () => {
   return (
     <div
-      className="px-4 mx-auto mt-16 max-w-7xl sm:mt-24 sm:px-6 text-center"
+      className="px-4 mx-auto  max-w-7xl sm:px-6 text-center"
       dir="rtl"
     >
       <h1 className="text-4xl font-extrabold text-gray-900 sm:text-5xl md:text-6xl font-dubai-bold">

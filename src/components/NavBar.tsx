@@ -5,20 +5,20 @@ interface NavBarProps {
   isHome?: boolean;
 }
 
-const NavBar = ({ isHome = false }: NavBarProps) => {
+const NavBar = ({ isHome  }: NavBarProps) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
   };
 
   return (
-    <nav
-      className="relative font-dubai-regular"
+    <div
+      className="relative font-dubai-regular z-50 pt-6 pb-16 sm:pb-16 lg:pb-24"
       dir="rtl"
       style={{ unicodeBidi: "bidi-override" }}
     >
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between ">
+        <nav className="flex items-center justify-between ">
           {/* Logo */}
           <div className="flex-shrink-0">
             <img src="dawin.svg" alt="logo" className="h-10 sm:h-12" />
@@ -65,16 +65,17 @@ const NavBar = ({ isHome = false }: NavBarProps) => {
               <Menu className="w-6 h-6" />
             </button>
           </div>
-        </div>
+        </nav>
+      </div>
 
-        {/* Mobile Menu */}
+      {/* Mobile Menu */}
         {isMenuOpen && (
-          <div className="absolute inset-x-0 p-2 top-0 transition origin-top-right transform md:hidden">
-            <div className="overflow-hidden rounded-lg shadow-lg bg-amber-600 ">
+          <nav className="absolute inset-x-0 p-2 top-0 transition origin-top-right transform md:hidden">
+            <div className="overflow-hidden rounded-lg shadow-lg bg-white">
               <div className="flex items-center justify-between px-5 pt-4">
                 <div>
                   <img
-                    className="w-auto h-8"
+                    className="w-auto h-9"
                     src="dawin.svg"
                     alt="Dawin Logo شعار محرر دوّن"
                   />
@@ -139,10 +140,9 @@ const NavBar = ({ isHome = false }: NavBarProps) => {
                 </a>
               )}
             </div>
-          </div>
+          </nav>
         )}
       </div>
-    </nav>
   );
 };
 

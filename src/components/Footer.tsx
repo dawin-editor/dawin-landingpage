@@ -8,14 +8,14 @@ const Footer = () => {
           aria-label="Footer"
         >
           <div className="px-5 py-2">
-            <a className="text-base text-gray-500 hover:text-gray-900" href="/">
+            <a className="text-base text-gray-500 hover:text-gray-900" href="/public">
               الرئيسة
             </a>
           </div>
           <div className="px-5 py-2">
             <a
               className="text-base text-gray-500 hover:text-gray-900"
-              href="/#feature"
+              href="/public#feature"
             >
               المميزات
             </a>

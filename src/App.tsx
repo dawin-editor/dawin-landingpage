@@ -1,15 +1,16 @@
-import Hero from "./pages/Hero";
-import Features from "./pages/Features";
-import Testmonials from "./pages/Testmonials";
-import Footer from "./pages/Footer";
+import Home from "./pages/Home";
+import NavBar from "./components/NavBar";
+import Footer from "./components/Footer";
+import Install from "./pages/Install";
+import About from "./pages/About";
+
 const App = () => {
   return (
-    <>
-    <Hero />
-    <Features />
-    <Testmonials />
-    <Footer />
-    </>
+    <div>
+      <NavBar isHome={false} />
+      <Install />
+      <Footer />
+    </div>
   );
 };
 
