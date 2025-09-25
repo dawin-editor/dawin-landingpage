@@ -1,5 +1,6 @@
 import { MoveLeft, Menu, X } from "lucide-react";
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 interface NavBarProps {
   isHome?: boolean;
@@ -13,7 +14,7 @@ const NavBar = ({ isHome  }: NavBarProps) => {
 
   return (
     <div
-      className="relative font-dubai-regular z-50 pt-6 pb-16 sm:pb-16 lg:pb-24"
+      className="relative font-dubai-regular z-50 pt-6 pb-16"
       dir="rtl"
       style={{ unicodeBidi: "bidi-override" }}
     >
@@ -27,32 +28,45 @@ const NavBar = ({ isHome  }: NavBarProps) => {
           {/* Desktop Links */}
           <ul className="hidden lg:flex gap-6 xl:gap-10 text-[#6B7280] text-[14px] lg:text-[16px] absolute left-1/2 transform -translate-x-1/2">
             <li className="whitespace-nowrap hover:text-black transition-colors">
-              <a href="#">الرئيسة</a>
+              <Link to="/">الرئيسة</Link>
             </li>
             <li className="whitespace-nowrap hover:text-black transition-colors">
-              <a href="#">حول المحرّر</a>
+              <Link to="/about">حول المحرّر</Link>
             </li>
             <li className="whitespace-nowrap hover:text-black transition-colors">
-              <a href="#">المميزات</a>
+              <Link 
+                to="/#feature" 
+                className="hover:underline"
+                onClick={(e) => {
+                  if (window.location.pathname === '/') {
+                    e.preventDefault();
+                    document.getElementById('feature')?.scrollIntoView({ behavior: 'smooth' });
+                  }
+                }}
+              >
+                المميزات
+              </Link>
             </li>
             <li className="whitespace-nowrap hover:text-black transition-colors">
-              <a href="#">دليل الماركداون</a>
+              <a href="https://guide.dawin.io/" target="_blank" rel="noopener noreferrer" className="hover:underline">
+                دليل الماركداون
+              </a>
             </li>
             <li className="whitespace-nowrap hover:text-black transition-colors">
-              <a href="#">التثبيت</a>
+              <Link to="/install">التثبيت</Link>
             </li>
           </ul>
 
           {/* Desktop Buttons */}
           <div className="hidden sm:flex gap-2 items-center">
-            <button className="text-[#1a4d77] text-[14px] sm:text-[16px] rounded-[6px] px-3 sm:px-4 py-2 bg-[#bad7f0] cursor-pointer font-medium hover:bg-[#a0c4e8] transition whitespace-nowrap">
+            <Link to="/contact" className="text-[#1a4d77] text-[14px] sm:text-[16px] rounded-[6px] px-3 sm:px-4 py-2 bg-[#bad7f0] cursor-pointer font-medium hover:bg-[#a0c4e8] transition whitespace-nowrap">
               عن المطوّر
-            </button>
+            </Link>
             {!isHome && (
-              <button className="text-[#78350f] bg-[#fae29f] text-[14px] sm:text-[16px] rounded-[6px] px-4 sm:px-5 py-[9px] cursor-pointer flex items-center gap-2 h-[42px] hover:bg-[#f8d980] transition whitespace-nowrap">
+              <Link to="/" className="text-[#78350f] bg-[#fae29f] text-[14px] sm:text-[16px] rounded-[6px] px-4 sm:px-5 py-[9px] cursor-pointer flex items-center gap-2 h-[42px] hover:bg-[#f8d980] transition whitespace-nowrap">
                 <span>ابدأ الكتابة</span>
                 <MoveLeft className="w-4 h-4 sm:w-5 sm:h-5" />
-              </button>
+              </Link>
             )}
           </div>
 
@@ -92,53 +106,71 @@ const NavBar = ({ isHome  }: NavBarProps) => {
                 </div>
               </div>
               <div className="px-2 pt-2 pb-3 space-y-1">
-                <a
+                <Link
+                  to="/"
                   className="block px-3 py-2 text-base font-medium text-gray-700 rounded-md hover:text-gray-900 hover:bg-gray-50"
-                  href="#"
+                  onClick={() => setIsMenuOpen(false)}
                 >
                   الرئيسة
-                </a>
-                <a
+                </Link>
+                <Link
+                  to="/about"
                   className="block px-3 py-2 text-base font-medium text-gray-700 rounded-md hover:text-gray-900 hover:bg-gray-50"
-                  href="#"
+                  onClick={() => setIsMenuOpen(false)}
                 >
-                  حول المحرّر
-                </a>
-                <a
+                  حول المحرر
+                </Link>
+                <Link
+                  to="/#feature"
                   className="block px-3 py-2 text-base font-medium text-gray-700 rounded-md hover:text-gray-900 hover:bg-gray-50"
-                  href="#"
+                  onClick={(e) => {
+                    setIsMenuOpen(false);
+                    if (window.location.pathname === '/') {
+                      e.preventDefault();
+                      document.getElementById('feature')?.scrollIntoView({ behavior: 'smooth' });
+                    }
+                  }}
                 >
-                  المميّزات
-                </a>
+                  المميزات
+                </Link>
                 <a
+                  href="https://guide.dawin.io/"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="block px-3 py-2 text-base font-medium text-gray-700 rounded-md hover:text-gray-900 hover:bg-gray-50"
-                  href="#"
+                  onClick={() => setIsMenuOpen(false)}
                 >
-                  دليل ماركداون
+                  دليل الماركداون
                 </a>
-                <a
+                <Link
+                  to="/install"
                   className="block px-3 py-2 text-base font-medium text-gray-700 rounded-md hover:text-gray-900 hover:bg-gray-50"
-                  href="#"
+                  onClick={() => setIsMenuOpen(false)}
                 >
                   التثبيت
-                </a>
+                </Link>
+                
               </div>
-              {isHome ? (
-                <a
-                  className="block w-full px-5 py-3 text-center font-medium bg-[#bad7f0] text-[#1a4d77] hover:text-[#155a87]"
-                  href="#"
-                >
-                  عن المطوّر
-                </a>
-              ) : (
-                <a
-                  className="w-full flex items-center justify-center gap-3 px-5 py-3 text-center font-medium bg-[#fae29f] text-[#78350f] hover:text-[#f8d980]"
-                  href="#"
-                >
-                  <span>ابدأ الكتابة</span>
-                  <MoveLeft className="w-5 h-5" />
-                </a>
-              )}
+              <div className="px-2 pb-5 space-y-3">
+                {!isHome ? (
+                  <Link
+                    to="/"
+                    className="w-full flex items-center justify-center gap-2 px-4 py-3 text-center font-medium bg-[#fae29f] text-[#78350f] hover:bg-[#f8d980] rounded-md"
+                    onClick={() => setIsMenuOpen(false)}
+                  >
+                    <span>ابدأ الكتابة</span>
+                    <MoveLeft className="w-5 h-5" />
+                  </Link>
+                ) : (
+                  <Link
+                    to="/contact"
+                    className="block w-full px-4 py-3 text-center text-[#1a4d77] bg-[#bad7f0] rounded-md hover:bg-[#a0c4e8] font-medium"
+                    onClick={() => setIsMenuOpen(false)}
+                  >
+                    عن المطور
+                  </Link>
+                )}
+              </div>
             </div>
           </nav>
         )}

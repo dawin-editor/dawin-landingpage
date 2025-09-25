@@ -1,6 +1,6 @@
 export default function About() {
   return (
-    <div className="min-h-screen bg-gradient-to-t from-blue-50" dir="rtl">
+    <div className="min-h-screen bg-gradient-to-t from-[#f4fafc]" dir="rtl">
       <div className="relative max-w-3xl px-2 mx-auto sm:py-8 sm:px-4 md:px-6 lg:px-8">
         <div className="relative">
           <div className="mx-auto mb-6 text-base sm:text-lg max-w-prose">
