@@ -1,4 +1,3 @@
-import { AnimatedGradientText } from "@/components/ui/animated-gradient-text";
 import { SparklesText } from "@/components/ui/sparkles-text"
 
 export default function About() {
@@ -21,12 +20,12 @@ export default function About() {
 
           <div className="px-2 py-4 sm:px-4 sm:py-6 font-dubai-regular text-[#4a4a4a] text-[18px] sm:text-lg leading-relaxed [&_p]:mb-4 sm:[&_p]:mb-6 [&_ul]:mb-4 sm:[&_ul]:mb-6 [&_li]:mb-2 sm:[&_li]:mb-3 [&_a]:text-[#3182ce] [&_a]:break-words hover:[&_a]:underline">
 
-              <div className="flex justify-center w-full mb-6 sm:mb-8 px-2 sm:px-4">
+              <div className="flex justify-center w-full mb-6 sm:mb-8 px-2 sm:px-4 text-center">
                 <SparklesText colors={{ first: "#2368a1", second: "#fae29f" }}>
-                  <span className="text-base sm:text-lg md:text-xl font-dubai-regular text-[#2368a1] text-center leading-relaxed">
+                  <p className="text-[20px] sm:text-lg md:text-xl font-dubai-regular text-[#2368a1] text-center leading-relaxed">
                     الآن محرّر دوّن بحلّة جديدة , وتجربة لم تعهدها من قبل , ميزات
                     عديدة بانتظارك!{" "}
-                  </span>
+                  </p>
                 </SparklesText>
               </div>
             
