@@ -49,7 +49,7 @@ const Footer = () => {
           <div className="px-5 py-2">
             <a
               className="text-base text-gray-500 hover:text-gray-900"
-              href="/contact"
+              href="/team"
             >
               اقترح فكرة!
             </a>

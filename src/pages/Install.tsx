@@ -71,7 +71,7 @@ export default function About() {
             </div>
             <p>
               إذا كنت تواجه أي مشكلة،{" "}
-              <a href="http://dawin.io/contact">
+              <a href="/team">
                 تواصل معي وسأكون موجوداً لمساعدتك
               </a>
               .

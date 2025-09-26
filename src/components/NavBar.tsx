@@ -1,12 +1,13 @@
 import { MoveLeft, Menu, X } from "lucide-react";
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import { Badge } from "@/components/ui/badge";
 
 interface NavBarProps {
   isHome?: boolean;
 }
 
-const NavBar = ({ isHome  }: NavBarProps) => {
+const NavBar = ({ isHome }: NavBarProps) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
@@ -30,17 +31,28 @@ const NavBar = ({ isHome  }: NavBarProps) => {
             <li className="whitespace-nowrap hover:text-black transition-colors">
               <Link to="/">الرئيسة</Link>
             </li>
-            <li className="whitespace-nowrap hover:text-black transition-colors">
-              <Link to="/about">حول المحرّر</Link>
+            <li className="relative whitespace-nowrap hover:text-black transition-colors">
+              <Link to="/about" className="relative inline-flex items-center">
+                حول المحرّر
+                <Badge
+                  variant="outline"
+                  className="absolute -top-2 -left-6 flex items-center gap-1 bg-blue-50 text-blue-700 border-blue-200 rounded-full px-2 py-[1px] text-[11px] font-medium shadow-sm cursor-pointer hover:bg-blue-100 transition"
+                >
+                  جديد
+                </Badge>
+              </Link>
             </li>
+
             <li className="whitespace-nowrap hover:text-black transition-colors">
-              <Link 
-                to="/#feature" 
+              <Link
+                to="/#feature"
                 className="hover:underline"
                 onClick={(e) => {
-                  if (window.location.pathname === '/') {
+                  if (window.location.pathname === "/") {
                     e.preventDefault();
-                    document.getElementById('feature')?.scrollIntoView({ behavior: 'smooth' });
+                    document
+                      .getElementById("feature")
+                      ?.scrollIntoView({ behavior: "smooth" });
                   }
                 }}
               >
@@ -48,7 +60,12 @@ const NavBar = ({ isHome  }: NavBarProps) => {
               </Link>
             </li>
             <li className="whitespace-nowrap hover:text-black transition-colors">
-              <a href="https://guide.dawin.io/" target="_blank" rel="noopener noreferrer" className="hover:underline">
+              <a
+                href="https://guide.dawin.io/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:underline"
+              >
                 دليل الماركداون
               </a>
             </li>
@@ -59,11 +76,17 @@ const NavBar = ({ isHome  }: NavBarProps) => {
 
           {/* Desktop Buttons */}
           <div className="hidden sm:flex gap-2 items-center">
-            <Link to="/contact" className="text-[#1a4d77] text-[14px] sm:text-[16px] rounded-[6px] px-3 sm:px-4 py-2 bg-[#bad7f0] cursor-pointer font-medium hover:bg-[#a0c4e8] transition whitespace-nowrap">
-              عن المطوّر
+            <Link
+              to="/team"
+              className="text-[#1a4d77] text-[14px] sm:text-[16px] rounded-[6px] px-3 sm:px-4 py-2 bg-[#bad7f0] cursor-pointer font-medium hover:bg-[#a0c4e8] transition whitespace-nowrap"
+            >
+              فريق العمل
             </Link>
             {!isHome && (
-              <Link to="/" className="text-[#78350f] bg-[#fae29f] text-[14px] sm:text-[16px] rounded-[6px] px-4 sm:px-5 py-[9px] cursor-pointer flex items-center gap-2 h-[42px] hover:bg-[#f8d980] transition whitespace-nowrap">
+              <Link
+                to="/"
+                className="text-[#78350f] bg-[#fae29f] text-[14px] sm:text-[16px] rounded-[6px] px-4 sm:px-5 py-[9px] cursor-pointer flex items-center gap-2 h-[42px] hover:bg-[#f8d980] transition whitespace-nowrap"
+              >
                 <span>ابدأ الكتابة</span>
                 <MoveLeft className="w-4 h-4 sm:w-5 sm:h-5" />
               </Link>
@@ -83,98 +106,99 @@ const NavBar = ({ isHome  }: NavBarProps) => {
       </div>
 
       {/* Mobile Menu */}
-        {isMenuOpen && (
-          <nav className="absolute inset-x-0 p-2 top-0 transition origin-top-right transform md:hidden">
-            <div className="overflow-hidden rounded-lg shadow-lg bg-white">
-              <div className="flex items-center justify-between px-5 pt-4">
-                <div>
-                  <img
-                    className="w-auto h-9"
-                    src="dawin.svg"
-                    alt="Dawin Logo شعار محرر دوّن"
-                  />
-                </div>
-                <div className="-mr-2">
-                  <button
-                    type="button"
-                    onClick={toggleMenu}
-                    className="inline-flex items-center justify-center p-2 text-gray-400 bg-white rounded-md hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500"
-                  >
-                    <span className="sr-only">اغلاق النافذة</span>
-                    <X className="w-6 h-6" />
-                  </button>
-                </div>
+      {isMenuOpen && (
+        <nav className="absolute inset-x-0 p-2 top-0 transition origin-top-right transform md:hidden">
+          <div className="overflow-hidden rounded-lg shadow-lg bg-white">
+            <div className="flex items-center justify-between px-5 pt-4">
+              <div>
+                <img
+                  className="w-auto h-9"
+                  src="dawin.svg"
+                  alt="Dawin Logo شعار محرر دوّن"
+                />
               </div>
-              <div className="px-2 pt-2 pb-3 space-y-1">
-                <Link
-                  to="/"
-                  className="block px-3 py-2 text-base font-medium text-gray-700 rounded-md hover:text-gray-900 hover:bg-gray-50"
-                  onClick={() => setIsMenuOpen(false)}
+              <div className="-mr-2">
+                <button
+                  type="button"
+                  onClick={toggleMenu}
+                  className="inline-flex items-center justify-center p-2 text-gray-400 bg-white rounded-md hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500"
                 >
-                  الرئيسة
-                </Link>
-                <Link
-                  to="/about"
-                  className="block px-3 py-2 text-base font-medium text-gray-700 rounded-md hover:text-gray-900 hover:bg-gray-50"
-                  onClick={() => setIsMenuOpen(false)}
-                >
-                  حول المحرر
-                </Link>
-                <Link
-                  to="/#feature"
-                  className="block px-3 py-2 text-base font-medium text-gray-700 rounded-md hover:text-gray-900 hover:bg-gray-50"
-                  onClick={(e) => {
-                    setIsMenuOpen(false);
-                    if (window.location.pathname === '/') {
-                      e.preventDefault();
-                      document.getElementById('feature')?.scrollIntoView({ behavior: 'smooth' });
-                    }
-                  }}
-                >
-                  المميزات
-                </Link>
-                <a
-                  href="https://guide.dawin.io/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="block px-3 py-2 text-base font-medium text-gray-700 rounded-md hover:text-gray-900 hover:bg-gray-50"
-                  onClick={() => setIsMenuOpen(false)}
-                >
-                  دليل الماركداون
-                </a>
-                <Link
-                  to="/install"
-                  className="block px-3 py-2 text-base font-medium text-gray-700 rounded-md hover:text-gray-900 hover:bg-gray-50"
-                  onClick={() => setIsMenuOpen(false)}
-                >
-                  التثبيت
-                </Link>
-                
-              </div>
-              <div className="px-2 pb-5 space-y-3">
-                {!isHome ? (
-                  <Link
-                    to="/"
-                    className="w-full flex items-center justify-center gap-2 px-4 py-3 text-center font-medium bg-[#fae29f] text-[#78350f] hover:bg-[#f8d980] rounded-md"
-                    onClick={() => setIsMenuOpen(false)}
-                  >
-                    <span>ابدأ الكتابة</span>
-                    <MoveLeft className="w-5 h-5" />
-                  </Link>
-                ) : (
-                  <Link
-                    to="/contact"
-                    className="block w-full px-4 py-3 text-center text-[#1a4d77] bg-[#bad7f0] rounded-md hover:bg-[#a0c4e8] font-medium"
-                    onClick={() => setIsMenuOpen(false)}
-                  >
-                    عن المطور
-                  </Link>
-                )}
+                  <span className="sr-only">اغلاق النافذة</span>
+                  <X className="w-6 h-6" />
+                </button>
               </div>
             </div>
-          </nav>
-        )}
-      </div>
+            <div className="px-2 pt-2 pb-3 space-y-1">
+              <Link
+                to="/"
+                className="block px-3 py-2 text-base font-medium text-gray-700 rounded-md hover:text-gray-900 hover:bg-gray-50"
+                onClick={() => setIsMenuOpen(false)}
+              >
+                الرئيسة
+              </Link>
+              <Link
+                to="/about"
+                className="block px-3 py-2 text-base font-medium text-gray-700 rounded-md hover:text-gray-900 hover:bg-gray-50"
+                onClick={() => setIsMenuOpen(false)}
+              >
+                حول المحرر
+              </Link>
+              <Link
+                to="/#feature"
+                className="block px-3 py-2 text-base font-medium text-gray-700 rounded-md hover:text-gray-900 hover:bg-gray-50"
+                onClick={(e) => {
+                  setIsMenuOpen(false);
+                  if (window.location.pathname === "/") {
+                    e.preventDefault();
+                    document
+                      .getElementById("feature")
+                      ?.scrollIntoView({ behavior: "smooth" });
+                  }
+                }}
+              >
+                المميزات
+              </Link>
+              <a
+                href="https://guide.dawin.io/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block px-3 py-2 text-base font-medium text-gray-700 rounded-md hover:text-gray-900 hover:bg-gray-50"
+                onClick={() => setIsMenuOpen(false)}
+              >
+                دليل الماركداون
+              </a>
+              <Link
+                to="/install"
+                className="block px-3 py-2 text-base font-medium text-gray-700 rounded-md hover:text-gray-900 hover:bg-gray-50"
+                onClick={() => setIsMenuOpen(false)}
+              >
+                التثبيت
+              </Link>
+            </div>
+            <div className="px-2 pb-5 space-y-3">
+              {!isHome ? (
+                <Link
+                  to="/"
+                  className="w-full flex items-center justify-center gap-2 px-4 py-3 text-center font-medium bg-[#fae29f] text-[#78350f] hover:bg-[#f8d980] rounded-md"
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  <span>ابدأ الكتابة</span>
+                  <MoveLeft className="w-5 h-5" />
+                </Link>
+              ) : (
+                <Link
+                  to="/contact"
+                  className="block w-full px-4 py-3 text-center text-[#1a4d77] bg-[#bad7f0] rounded-md hover:bg-[#a0c4e8] font-medium"
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  فريق العمل
+                </Link>
+              )}
+            </div>
+          </div>
+        </nav>
+      )}
+    </div>
   );
 };
 

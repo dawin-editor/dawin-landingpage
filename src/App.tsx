@@ -30,7 +30,7 @@ const AppContent = () => {
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
           <Route path="/install" element={<Install />} />
-          <Route path="/contact" element={<Contact />} />
+          <Route path="/team" element={<Contact />} />
         </Routes>
       </main>
       <Footer />
