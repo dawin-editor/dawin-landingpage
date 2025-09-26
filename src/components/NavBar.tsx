@@ -176,7 +176,7 @@ const NavBar = ({ isHome }: NavBarProps) => {
                 التثبيت
               </Link>
             </div>
-            <div className="px-2 pb-5 space-y-3">
+            <div className="px-2 pb-3 space-y-">
               {!isHome ? (
                 <a
                   href="https://app.dawin.io/"
@@ -189,7 +189,7 @@ const NavBar = ({ isHome }: NavBarProps) => {
                 </a>
               ) : (
                 <Link
-                  to="/contact"
+                  to="/team"
                   className="block w-full px-4 py-3 text-center text-[#1a4d77] bg-[#bad7f0] rounded-md hover:bg-[#a0c4e8] font-medium"
                   onClick={() => setIsMenuOpen(false)}
                   >
