@@ -22,10 +22,10 @@ const TextHero = () => {
       </p>
 
       <div className="mx-auto mt-10 w-fit">
-        <button className="text-[#78350f] bg-[#fae29f] text-[14px] sm:text-[16px] rounded-[6px] px-15 py-4 cursor-pointer flex items-center justify-center gap-2  hover:bg-[#f8d980] font-dubai-regular">
+        <a href="https://app.dawin.io/" target="_blank" className="text-[#78350f] bg-[#fae29f] text-[14px] sm:text-[16px] rounded-[6px] px-15 py-4 cursor-pointer flex items-center justify-center gap-2  hover:bg-[#f8d980] font-dubai-regular">
           <span>ابدأ الكتابة الآن</span>
           <MoveLeft className="w-4 h-4 sm:w-5 sm:h-5" />
-        </button>
+        </a>
       </div>
     </div>
   );

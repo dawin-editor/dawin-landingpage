@@ -80,16 +80,17 @@ const NavBar = ({ isHome }: NavBarProps) => {
               to="/team"
               className="text-[#1a4d77] text-[14px] sm:text-[16px] rounded-[6px] px-3 sm:px-4 py-2 bg-[#bad7f0] cursor-pointer font-medium hover:bg-[#a0c4e8] transition whitespace-nowrap"
             >
-              فريق العمل
+              عن المطور
             </Link>
             {!isHome && (
-              <Link
-                to="/"
+              <a
+                href="https://app.dawin.io/"
+                target="_blank"
                 className="text-[#78350f] bg-[#fae29f] text-[14px] sm:text-[16px] rounded-[6px] px-4 sm:px-5 py-[9px] cursor-pointer flex items-center gap-2 h-[42px] hover:bg-[#f8d980] transition whitespace-nowrap"
               >
                 <span>ابدأ الكتابة</span>
                 <MoveLeft className="w-4 h-4 sm:w-5 sm:h-5" />
-              </Link>
+              </a>
             )}
           </div>
 
@@ -177,21 +178,22 @@ const NavBar = ({ isHome }: NavBarProps) => {
             </div>
             <div className="px-2 pb-5 space-y-3">
               {!isHome ? (
-                <Link
-                  to="/"
+                <a
+                  href="https://app.dawin.io/"
+                  target="_blank"
                   className="w-full flex items-center justify-center gap-2 px-4 py-3 text-center font-medium bg-[#fae29f] text-[#78350f] hover:bg-[#f8d980] rounded-md"
                   onClick={() => setIsMenuOpen(false)}
                 >
                   <span>ابدأ الكتابة</span>
                   <MoveLeft className="w-5 h-5" />
-                </Link>
+                </a>
               ) : (
                 <Link
                   to="/contact"
                   className="block w-full px-4 py-3 text-center text-[#1a4d77] bg-[#bad7f0] rounded-md hover:bg-[#a0c4e8] font-medium"
                   onClick={() => setIsMenuOpen(false)}
-                >
-                  فريق العمل
+                  >
+                    عن المطور
                 </Link>
               )}
             </div>
