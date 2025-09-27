@@ -1,74 +1,33 @@
-# React + TypeScript + Vite
+<div dir="rtl" align="center">
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# دَوِّن | Dawin
 
-Currently, two official plugins are available:
+## محرّر نصوص ماركداون عربي
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+<p align="center">
+  <img src="https://app.dawin.io/example.png" alt="دَوِّن مثال" />
+</p>
 
-## React Compiler
+</div>
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+**<mark data-color="var(--tt-color-highlight-blue)" style="background-color: var(--tt-color-highlight-blue); color: inherit;">دَوِّن</mark>**،
+هو محرّر نصوص عربي لتنسيقات ماركداون (Markdown) صمّم لحلّ مشكلة عدم توفر أي محرر نصوص متقدم يدعم اللغة العربية والاتجاه (Right to left). طوّر بأياد عربية خالصة تكّن للغة العربية احتراما وإجلالًا.
 
-## Expanding the ESLint configuration
+محرر دَوِّن لم يبنى بطريقة عادية، بل بفلسفة مختلفة، صنعته من خلال تحدٍ وضعته لنفسي وأطلقته قبل مدة بعنوان (من فكرة إلى منتج) وشاركت رحلة تفاصيل بنائه علناً خطوة بخطوة (Building in public) عبر مدونتي في أربعة أيام مختلفة:
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+- [الانطلاقة واعلان التحدّي.](https://blog.abdelhadi.org/building-in-public-arabic-markdown-editor/)
+- **اليوم الأوّل:** [دراسة الفكرة وحلّ المشكلة واختيار اسم المشروع.](https://blog.abdelhadi.org/building-in-public-arabic-markdown-editor/#day-1)
+- **اليوم الثاني:** [تصميم المشروع ودراسة تجربة المستخدم (UX/UI).](https://blog.abdelhadi.org/building-in-public-arabic-Markdown-editor/#day-2)
+- **اليوم الثالث:** [اكمال تصميم المشروع وبدء البرمجة (fron-end)](https://blog.abdelhadi.org/building-in-public-arabic-markdown-editor/#day-3)
+- **اليوم الرابع:** [إطلاق النسخة التجريبية](https://blog.abdelhadi.org/building-in-public-arabic-markdown-editor/#day-4)
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+حاولت تطوير أدواته وتطوير خصائص يحتاجها الكاتب والمدوّن. كما جعلته موفراً بتقنية PWA أو (Progressive Web Apps) والتي تمكنك من استعماله وتنصيبه على أي جهاز واستعماله دون الحاجة إلى اتصال انترنت.
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+مبادرة التحدّي جاءت لهدف أسمى وبِنيّة تشجيع الشباب والفتيات على تطوير أدوات تخدم المحتوى العربي دون أن نعتمد على منتجات ثانية لا تدعم العربية ونحتاج إلى ترقيعها. لك أن تدرك أن الفارق بين ظهور ماركداون إلى حد يومنا هذا 16 سنة كاملة! لا توجد أي أداة تدعم العربية وهذا بكل صدق .. مُؤلم.
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+### كن أحد الرعاة الرسميين
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+يمكنك أن تصبح أحد رعاة مشروع محرّر دَوِّن وينقش اسمك على صفحاته كتسويق لك أو لمشروعك إن شاء الله تعالى. يمكنك أن تراسلني من هنا
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+---
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
-# dawin-landingpage
