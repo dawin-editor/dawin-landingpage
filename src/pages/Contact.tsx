@@ -1,20 +1,20 @@
-
 export default function Contact() {
   return (
     <div className="min-h-screen bg-gradient-to-t from-[#f4fafc]" dir="rtl">
       <div className="relative max-w-5xl px-4 mx-auto sm:py-12 md:px-6 lg:px-8">
-      <div className="mx-auto mb-6 text-base sm:text-lg max-w-prose">
-            <h1>
-              <span className="block mt-2 text-2xl sm:text-[2rem] font-extrabold leading-8 tracking-tight text-center text-[#2368a1] font-dubai-bold">
-                فريق العمل
-              </span>
-            </h1>
-            <p className="mt-2 text-lg sm:text-xl leading-7 sm:leading-8 text-center text-gray-600 font-dubai-regular">
-              حياك الله، سعداء بوجودك, تعرف على الفريق الذي يقف خلف <span className="font-dubai-bold">دَوّن</span>
-            </p>
-          </div>
+        <div className="mx-auto mb-6 text-base sm:text-lg max-w-prose">
+          <h1>
+            <span className="block mt-2 text-2xl sm:text-[2rem] font-extrabold leading-8 tracking-tight text-center text-[#2368a1] font-dubai-bold">
+              فريق العمل
+            </span>
+          </h1>
+          <p className="mt-2 text-lg sm:text-xl leading-7 sm:leading-8 text-center text-gray-600 font-dubai-regular">
+            حيّاك الله، يسعدنا وجودك معنا. هل لديك فكرة لميزة جديدة أو واجهت
+            عطلًا؟ تواصل مع فريق <span className="font-dubai-bold text-[#2368a1]">دَوّن</span>
+          </p>
+        </div>
 
-          <hr className="border-gray-200 my-6 sm:my-8" />
+        <hr className="border-gray-200 my-6 sm:my-8" />
 
         <section className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {/* Member 1 */}
@@ -27,8 +27,8 @@ export default function Contact() {
               />
 
               <p>
-                أنا عبدالهادي جعفر، شاب مُسلم من الجزائر، خرّيج علوم حاسب (IT). أحب البساطة في كل
-                شيء وحل المشاكل بطرق ابداعية.
+                أنا عبدالهادي جعفر، شاب مُسلم من الجزائر، خرّيج علوم حاسب (IT).
+                أحب البساطة في كل شيء وحل المشاكل بطرق ابداعية.
               </p>
 
               <p>
@@ -83,7 +83,10 @@ export default function Contact() {
               <p>أنا يوسف بن عتصمان مطور برمجيات و أسعى لترك أثر ينفع الأمة</p>
               <p>
                 قصتي بدأت مع{" "}
-                <a className=" text-[#2368a1]" href="https://ar.wikipedia.org/wiki/%D8%A7%D9%84%D8%A2%D8%AC%D8%B1%D9%88%D9%85%D9%8A%D8%A9">
+                <a
+                  className=" text-[#2368a1]"
+                  href="https://ar.wikipedia.org/wiki/%D8%A7%D9%84%D8%A2%D8%AC%D8%B1%D9%88%D9%85%D9%8A%D8%A9"
+                >
                   الاجرومية
                 </a>{" "}
                 في النحو هي صعبة , كذلك؟ ومن هناك كانت الانطلاقة في خدمة اللغة و
