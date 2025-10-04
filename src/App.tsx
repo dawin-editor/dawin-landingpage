@@ -6,6 +6,7 @@ import Install from "./pages/Install";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
 import { useEffect } from 'react';
+import FeedbackButton from './components/FeedbackButton';
 
 // Wrapper component to handle scroll to top on route change
 const ScrollToTop = () => {
@@ -32,6 +33,8 @@ const AppContent = () => {
           <Route path="/install" element={<Install />} />
           <Route path="/team" element={<Contact />} />
         </Routes>
+        <FeedbackButton />
+
       </main>
       <Footer />
     </div>
