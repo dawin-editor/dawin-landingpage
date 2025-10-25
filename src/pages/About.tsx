@@ -105,6 +105,13 @@ export default function About() {
               كتسويق لك أو لمشروعك إن شاء الله تعالى. يمكنك أن تراسلني{" "}
               <a href="/team">من هنا</a>
             </p>
+            <h3 className="text-black mt-8 sm:mt-10 mb-3 sm:mb-4 font-dubai-bold text-lg sm:text-xl md:text-2xl">
+              النسخة القديمة
+            </h3>
+            <p>
+              يمكنك استعمال النسخة السابقة من محرر دوّن من{" "}
+              <a href="https://old.dawin.io/">النسخة القديمة</a>
+            </p>
           </div>
         </div>
       </div>
