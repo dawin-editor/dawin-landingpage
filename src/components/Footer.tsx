@@ -78,7 +78,7 @@ const Footer = () => {
 
           {/* GitHub */}
           <a
-            href="https://github.com/imAbdelhadi"
+            href="https://github.com/dawin-editor"
             className="text-gray-400 hover:text-gray-500"
             target="_blank"
             rel="noopener noreferrer"
