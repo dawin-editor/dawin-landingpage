@@ -5,6 +5,7 @@ import Footer from "./components/Footer";
 import Install from "./pages/Install";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
+import Privacy from "./pages/Privacy";
 import { useEffect } from 'react';
 import FeedbackButton from './components/FeedbackButton';
 
@@ -32,6 +33,7 @@ const AppContent = () => {
           <Route path="/about" element={<About />} />
           <Route path="/install" element={<Install />} />
           <Route path="/team" element={<Contact />} />
+          <Route path="/privacy" element={<Privacy />} />
         </Routes>
         <FeedbackButton />
 
