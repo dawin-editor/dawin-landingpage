@@ -1,4 +1,4 @@
-import { MoveLeft } from "lucide-react";
+import { MoveLeft, Chrome } from "lucide-react";
 
 const TextHero = () => {
   return (
@@ -21,10 +21,18 @@ const TextHero = () => {
         تثبيته أينما أردت، ويعمل دون الحاجة إلى إنترنت.
       </p>
 
-      <div className="mx-auto mt-10 w-fit">
-        <a href="https://app.dawin.io/" target="_blank" className="text-[#78350f] bg-[#fae29f] text-[14px] sm:text-[16px] rounded-[6px] px-15 py-4 cursor-pointer flex items-center justify-center gap-2  hover:bg-[#f8d980] font-dubai-regular">
+      <div className="mx-auto mt-10 w-fit flex flex-col sm:flex-row items-center gap-6">
+        <a href="https://app.dawin.io/" target="_blank" className="text-[#78350f] bg-[#fae29f] text-[14px] sm:text-[16px] rounded-[6px] px-10 sm:px-15 py-4 cursor-pointer flex items-center justify-center gap-3 hover:bg-[#f8d980] font-dubai-regular transition-colors">
           <span>ابدأ الكتابة الآن</span>
           <MoveLeft className="w-4 h-4 sm:w-5 sm:h-5" />
+        </a>
+        <a
+          href="https://chromewebstore.google.com/detail/%D9%85%D9%82%D8%B5-%D8%AF%D9%88%D9%91%D9%86-dawin-clipper/jkcnohhdiadcfbkdbdkinifjfjpodgoa"
+          target="_blank"
+          className="text-[#1a4d77] bg-[#bad7f0] text-[14px] sm:text-[16px] rounded-[6px] px-10 sm:px-7 py-3 cursor-pointer flex items-center justify-center gap-3 hover:bg-[#a0c4e8] font-dubai-regular transition-colors"
+        >
+          <Chrome className="w-6 h-6 sm:w-8 sm:h-8" />
+          <span>مقص دَوِّن</span>
         </a>
       </div>
     </div>
