@@ -95,7 +95,7 @@ export default function Contact() {
 
               <div className="mt-2 flex gap-4">
                 <a
-                  href="https://www.linkedin.com/in/youssouf-b-312097256/"
+                  href="https://www.linkedin.com/in/benotsmane-youssouf/"
                   aria-label="لينكدإن"
                   className="text-[#3182ce] hover:underline"
                 >
