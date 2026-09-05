@@ -108,6 +108,13 @@ export default function Contact() {
                 >
                   فيسبوك
                 </a>
+                <a
+                  href="https://yben.vercel.app/"
+                  aria-label="youssuf's portfolio"
+                  className="text-[#3182ce] hover:underline"
+                >
+                  موقعي
+                </a>
               </div>
             </div>
           </article>
